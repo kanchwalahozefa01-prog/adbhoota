@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Adbhoota — The magical expression</title>
+<meta name="description" content="Adbhoota is a design studio offering world-class product & design consultation and award-winning animation and graphic design.">
+<meta property="og:title" content="Adbhoota — The magical expression">
+<meta property="og:description" content="World-class design consultation. Cutting-edge design solutions.">
+<meta property="og:image" content="https://adbhoota.com/assets/logo-full.png">
+<meta property="og:url" content="https://adbhoota.com/">
+<link rel="icon" href="assets/emblem.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#fbf8f2;
+    --cream:#f3ece0;
+    --espresso:#2b1b12;
+    --espresso-2:#3a261a;
+    --gold:#b8973a;
+    --gold-soft:#d9bf72;
+    --ink:#2b2420;
+    --muted:#6f655d;
+    --line:rgba(43,27,18,.12);
+    --serif:"Cormorant Garamond", Georgia, serif;
+    --sans:"Quicksand", system-ui, -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.7;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+
+  /* Nav */
+  nav{position:fixed;inset:0 0 auto 0;z-index:10;transition:background .3s, box-shadow .3s}
+  nav.scrolled{background:rgba(251,248,242,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:1.35rem;letter-spacing:.12em;color:var(--gold);font-weight:400}
+  .brand img{width:34px;height:34px;mix-blend-mode:multiply}
+  nav ul{display:flex;gap:32px;list-style:none}
+  nav ul a{text-decoration:none;font-size:.9rem;letter-spacing:.08em;color:var(--espresso);opacity:.75;transition:opacity .2s}
+  nav ul a:hover{opacity:1}
+
+  /* Hero */
+  .hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding:120px 0 80px;position:relative;overflow:hidden;
+    background:radial-gradient(ellipse at 50% 35%, #fff 0%, var(--ivory) 55%, var(--cream) 100%)}
+  .hero .emblem{width:clamp(180px,26vw,280px);margin:0 auto 36px;mix-blend-mode:multiply;animation:float 7s ease-in-out infinite}
+  .eyebrow{font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+  .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.08;color:var(--espresso);max-width:16ch;margin-inline:auto}
+  .hero h1 em{color:var(--gold);font-style:italic}
+  .hero p.lede{margin:24px auto 40px;max-width:46ch;color:var(--muted);font-size:clamp(1rem,1.6vw,1.15rem);font-weight:300}
+  .btn{display:inline-block;padding:14px 34px;border-radius:999px;background:var(--espresso);color:var(--gold-soft);text-decoration:none;letter-spacing:.1em;font-size:.88rem;font-weight:500;transition:transform .2s, box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(43,27,18,.25)}
+  .btn.ghost{background:transparent;color:var(--espresso);border:1px solid var(--line);margin-left:10px}
+  .scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.3em;color:var(--muted);text-transform:uppercase}
+  @keyframes float{50%{transform:translateY(-10px) rotate(-2deg)}}
+
+  /* Sections */
+  section{padding:clamp(80px,12vw,140px) 0}
+  .section-head{text-align:center;margin-bottom:64px}
+  .section-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(2rem,4.4vw,3.2rem);color:var(--espresso);line-height:1.15}
+  .section-head p{color:var(--muted);max-width:56ch;margin:14px auto 0;font-weight:300}
+  .rule{width:48px;height:1px;background:var(--gold);margin:22px auto 0}
+
+  /* Meaning strip */
+  .meaning{background:var(--espresso);color:var(--cream);padding:56px 0;text-align:center}
+  .meaning p{font-family:var(--serif);font-size:clamp(1.25rem,2.6vw,1.75rem);font-style:italic;max-width:40ch;margin-inline:auto;line-height:1.5}
+  .meaning span{color:var(--gold-soft);font-style:normal}
+
+  /* Services */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:44px 34px;transition:transform .3s, box-shadow .3s, border-color .3s;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -20px rgba(43,27,18,.25);border-color:rgba(184,151,58,.45)}
+  .card .num{font-family:var(--serif);font-size:3rem;color:var(--gold);opacity:.35;line-height:1;position:absolute;top:24px;right:28px}
+  .card .icon{width:54px;height:54px;border-radius:50%;background:var(--espresso);display:grid;place-items:center;margin-bottom:26px}
+  .card .icon svg{width:26px;height:26px;stroke:var(--gold-soft);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-family:var(--serif);font-weight:500;font-size:1.65rem;color:var(--espresso);margin-bottom:12px;line-height:1.2}
+  .card p{color:var(--muted);font-size:.97rem;font-weight:400}
+  .card ul{list-style:none;margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+  .card li{font-size:.76rem;letter-spacing:.04em;padding:5px 12px;border-radius:999px;background:var(--cream);color:var(--espresso-2)}
+
+  /* Team */
+  .team-bg{background:var(--cream)}
+  .team{display:grid;gap:56px}
+  .member{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:center}
+  .member:nth-child(even){grid-template-columns:1fr 280px}
+  .member:nth-child(even) .photo{order:2}
+  .photo{position:relative}
+  .photo img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;filter:saturate(.92)}
+  .photo::after{content:"";position:absolute;inset:14px -14px -14px 14px;border:1px solid var(--gold);border-radius:18px;z-index:-1}
+  .member h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.8rem,3.4vw,2.4rem);color:var(--espresso);line-height:1.15}
+  .member .role{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:8px 0 20px;font-weight:600}
+  .member p{color:var(--muted);font-weight:400}
+  .badge{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:8px 16px;border-radius:999px;background:var(--espresso);color:var(--gold-soft);font-size:.8rem;letter-spacing:.04em}
+
+  /* Contact */
+  .contact{background:var(--espresso);color:var(--cream);text-align:center;position:relative;overflow:hidden}
+  .contact .emblem-bg{position:absolute;width:520px;right:-140px;bottom:-160px;opacity:.09;filter:invert(1);mix-blend-mode:screen}
+  .contact h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.15}
+  .contact h2 em{color:var(--gold-soft)}
+  .contact p{color:rgba(243,236,224,.7);max-width:48ch;margin:18px auto 40px;font-weight:300}
+  .mail{display:inline-block;font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,2rem);color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(217,191,114,.4);padding-bottom:4px;transition:border-color .2s;word-break:break-all}
+  .mail:hover{border-color:var(--gold-soft)}
+  .contact .btn{background:var(--gold);color:var(--espresso);margin-top:40px}
+
+  footer{background:#1f130c;color:rgba(243,236,224,.5);font-size:.8rem;padding:28px 0;letter-spacing:.06em}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease, transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero .emblem{animation:none}}
+
+  @media (max-width:900px){
+    .services{grid-template-columns:1fr}
+    .member,.member:nth-child(even){grid-template-columns:1fr;gap:32px;text-align:center}
+    .member:nth-child(even) .photo{order:0}
+    .photo{max-width:260px;margin-inline:auto}
+    nav ul{display:none}
+  }
+  @media (max-width:480px){
+    .btn.ghost{margin:12px 0 0}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><img src="assets/emblem.png" alt="">Adbhoota</a>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img class="emblem" src="assets/emblem.png" alt="Adbhoota emblem">
+    <div class="eyebrow">Adbhoota · The magical expression</div>
+    <h1>Design that feels like <em>magic</em>, built to work in the real world.</h1>
+    <p class="lede">World-class design consultation and cutting-edge design solutions — from AI-powered products to award-winning animated stories.</p>
+    <a class="btn" href="#contact">Start a project</a>
+    <a class="btn ghost" href="#services">What we do</a>
+  </div>
+  <div class="scroll-cue">Scroll</div>
+</header>
+
+<div class="meaning">
+  <div class="wrap reveal">
+    <p><span>Adbhuta</span> (अद्भुत) — Sanskrit for <span>wonder</span>, one of the nine rasas of classical Indian art. It's the feeling we design for.</p>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What we do</div>
+      <h2>Three crafts, one obsession with quality</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="services">
+      <article class="card reveal">
+        <span class="num">01</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M7 9h4M7 12h7"/></svg></div>
+        <h3>Product Consultation</h3>
+        <p>We help companies shape AI-powered digital products — from product strategy and roadmaps to experiences people actually love using.</p>
+        <ul><li>Product strategy</li><li>AI products</li><li>UX research</li></ul>
+      </article>
+      <article class="card reveal">
+        <span class="num">02</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/></svg></div>
+        <h3>Design Consultation</h3>
+        <p>We strengthen the design practice behind great products — building scalable design systems and mentoring in-house teams to deliver outcomes that support business goals.</p>
+        <ul><li>Design systems</li><li>Team building</li><li>Design ops</li></ul>
+      </article>
+      <article class="card reveal">
+        <span class="num">03</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></svg></div>
+        <h3>Animation &amp; Graphic Design</h3>
+        <p>We turn ideas into compelling visual narratives through animation films, motion graphics, visual storytelling and mixed-media communication.</p>
+        <ul><li>Animation films</li><li>Motion graphics</li><li>Brand visuals</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="team" class="team-bg">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">The people</div>
+      <h2>Meet the minds behind the magic</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="team">
+      <div class="member reveal">
+        <div class="photo"><img src="assets/hozefa.jpg" alt="Hozefa Kanchwala"></div>
+        <div>
+          <h3>Hozefa Kanchwala</h3>
+          <div class="role">Product &amp; Design Consultant</div>
+          <p>Hozefa helps companies build AI-powered digital products and strengthen the design practices behind them. With over 12 years of experience as a designer and entrepreneur, he has worked with organisations including Cognizant, Royal London, Drip Capital and HUB Technology Partners. His expertise spans product strategy, design systems, and building and mentoring in-house design teams, with a focus on creating meaningful design outcomes that support business goals.</p>
+          <span class="badge">12+ years · Designer &amp; Entrepreneur</span>
+        </div>
+      </div>
+      <div class="member reveal">
+        <div class="photo"><img src="assets/shyam.jpg" alt="Shyam Sundar Chatterjee"></div>
+        <div>
+          <h3>Shyam Sundar Chatterjee</h3>
+          <div class="role">Animation Film Designer</div>
+          <p>Shyam is an artist at heart, a designer by process and an animator by expression. His practice combines observation, imagination and a thoughtful design process to transform ideas into compelling visual narratives. With experience working with clients across the world, he specialises in animation films, motion graphics, visual storytelling and mixed-media communication. His work has received national and international recognition.</p>
+          <span class="badge">🏆 National Film Award 2017 · <i>Hum Chitra Banate Hai</i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <img class="emblem-bg" src="assets/emblem.png" alt="">
+  <div class="wrap reveal">
+    <div class="eyebrow">Let's talk</div>
+    <h2>Have an idea worth <em>wondering</em> about?</h2>
+    <p>Tell us about your product, your brand or your story. We usually reply within a couple of working days.</p>
+    <a class="mail" href="mailto:huzefa.iitg@gmail.com">huzefa.iitg@gmail.com</a><br>
+    <a class="btn" href="mailto:huzefa.iitg@gmail.com?subject=Project%20enquiry%20via%20adbhoota.com">Write to us</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> Adbhoota · The magical expression</span>
+    <span>adbhoota.com</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const nav = document.getElementById('nav');
+  addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
