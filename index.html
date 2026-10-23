@@ -71,7 +71,7 @@
   .meaning span{color:var(--gold-soft);font-style:normal}
 
   /* Services */
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
   .card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:44px 34px;transition:transform .3s, box-shadow .3s, border-color .3s;position:relative;overflow:hidden}
   .card:hover{transform:translateY(-6px);box-shadow:0 24px 50px -20px rgba(43,27,18,.25);border-color:rgba(184,151,58,.45)}
   .card .num{font-family:var(--serif);font-size:3rem;color:var(--gold);opacity:.35;line-height:1;position:absolute;top:24px;right:28px}
@@ -105,6 +105,8 @@
   .mail{display:inline-block;font-family:var(--serif);font-size:clamp(1.3rem,3.2vw,2rem);color:var(--gold-soft);text-decoration:none;border-bottom:1px solid rgba(217,191,114,.4);padding-bottom:4px;transition:border-color .2s;word-break:break-all}
   .mail:hover{border-color:var(--gold-soft)}
   .contact .btn{background:var(--gold);color:var(--espresso);margin-top:40px}
+  .contact address{font-style:normal;color:rgba(243,236,224,.7);font-weight:300;line-height:1.8;margin-top:40px}
+  .contact address strong{display:block;color:var(--gold-soft);font-weight:500;font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:8px}
 
   footer{background:#1f130c;color:rgba(243,236,224,.5);font-size:.8rem;padding:28px 0;letter-spacing:.06em}
   footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -161,7 +163,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">What we do</div>
-      <h2>Three crafts, one obsession with quality</h2>
+      <h2>Four crafts, one obsession with quality</h2>
       <div class="rule"></div>
     </div>
     <div class="services">
@@ -182,9 +184,16 @@
       <article class="card reveal">
         <span class="num">03</span>
         <div class="icon"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M10 9.5v5l4.5-2.5z"/></svg></div>
-        <h3>Animation &amp; Graphic Design</h3>
-        <p>We turn ideas into compelling visual narratives through animation films, motion graphics, visual storytelling and mixed-media communication.</p>
-        <ul><li>Animation films</li><li>Motion graphics</li><li>Brand visuals</li></ul>
+        <h3>Animation</h3>
+        <p>We turn ideas into compelling visual narratives through animation films, motion graphics and visual storytelling.</p>
+        <ul><li>Animation films</li><li>Motion graphics</li><li>Visual storytelling</li></ul>
+      </article>
+      <article class="card reveal">
+        <span class="num">04</span>
+        <div class="icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
+        <h3>Graphic Design</h3>
+        <p>We craft brand visuals and graphic communication that make your story instantly recognisable — across print, digital and mixed media.</p>
+        <ul><li>Brand visuals</li><li>Illustration</li><li>Mixed-media</li></ul>
       </article>
     </div>
   </div>
@@ -226,8 +235,15 @@
     <div class="eyebrow">Let's talk</div>
     <h2>Have an idea worth <em>wondering</em> about?</h2>
     <p>Tell us about your product, your brand or your story. We usually reply within a couple of working days.</p>
-    <a class="mail" href="mailto:huzefa.iitg@gmail.com">huzefa.iitg@gmail.com</a><br>
-    <a class="btn" href="mailto:huzefa.iitg@gmail.com?subject=Project%20enquiry%20via%20adbhoota.com">Write to us</a>
+    <a class="mail" href="mailto:adbhoota@gmail.com">adbhoota@gmail.com</a><br>
+    <address>
+      <strong>Studio address</strong>
+      Shyam Sundar Chatterjee<br>
+      House name: Mahamaya, Near Shiv Mandir, Simuldih<br>
+      P.O + Dist: Damodarpur, via IIT Dhanbad, Dhanbad – 826001<br>
+      Jharkhand, India
+    </address>
+    <a class="btn" href="mailto:adbhoota@gmail.com?subject=Project%20enquiry%20via%20adbhoota.com">Write to us</a>
   </div>
 </section>
 
