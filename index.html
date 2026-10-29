@@ -98,13 +98,22 @@
 
   /* Clients */
   .clients-sec{border-top:1px solid var(--line)}
-  .clients{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
-  .client{background:var(--ivory);min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 18px;transition:background .3s}
-  .client:hover{background:#fff}
-  .client img{max-height:56px;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.75;transition:filter .3s, opacity .3s}
-  .client:hover img{filter:none;opacity:1}
-  .client b{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--espresso);line-height:1.2}
-  .client span{margin-top:6px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .marquee{overflow:hidden;padding:8px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+  .track{display:flex;width:max-content;animation:marquee 45s linear infinite;animation-play-state:paused}
+  .marquee.run .track{animation-play-state:running}
+  .marquee:hover .track{animation-play-state:paused}
+  .client-list{display:flex;gap:40px;padding-right:40px;list-style:none}
+  .client{display:flex;flex-direction:column;align-items:center;gap:14px;width:150px;text-align:center}
+  .client .logo{width:120px;height:120px;border-radius:24px;background:#fff;border:1px solid var(--line);display:grid;place-items:center;overflow:hidden;transition:transform .3s, box-shadow .3s}
+  .client:hover .logo{transform:translateY(-4px);box-shadow:0 16px 32px -16px rgba(43,27,18,.35)}
+  .client .logo img{width:100%;height:100%;object-fit:cover}
+  .client .logo.fit img{object-fit:contain;padding:14px}
+  .client .logo.dark{background:var(--espresso)}
+  .client .logo.icon img{object-position:left center}
+  .client .logo.mono{background:var(--espresso);font-family:var(--serif);font-size:3.2rem;color:var(--gold-soft)}
+  .client span{font-size:.85rem;color:var(--espresso-2);font-weight:500;line-height:1.3}
+  @keyframes marquee{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.marquee{overflow-x:auto}.track{animation:none}.client-list[aria-hidden]{display:none}}
 
   /* Team */
   .team-bg{background:var(--cream)}
@@ -143,9 +152,10 @@
   @media (max-width:900px){
     .services{grid-template-columns:1fr}
     .about-grid{grid-template-columns:1fr;gap:48px}
-    .clients{grid-template-columns:repeat(2,1fr)}
-    .client{min-height:120px}
-    .client b{font-size:1.15rem}
+    .client-list{gap:24px;padding-right:24px}
+    .client{width:112px}
+    .client .logo{width:92px;height:92px;border-radius:20px}
+    .client span{font-size:.78rem}
     .member,.member:nth-child(even){grid-template-columns:1fr;gap:32px;text-align:center}
     .member:nth-child(even) .photo{order:0}
     .photo{max-width:260px;margin-inline:auto}
@@ -258,19 +268,37 @@
       <p>From global organisations to bold independent brands — here are some of the people we've created with.</p>
       <div class="rule"></div>
     </div>
-    <div class="clients reveal">
-      <div class="client"><b>UNICEF</b><span>Tajikistan</span></div>
-      <div class="client"><b>Reliance</b></div>
-      <div class="client"><b>NFDC</b><span>Govt. of India</span></div>
-      <div class="client"><b>Ethara</b><span>Abu Dhabi</span></div>
-      <div class="client"><b>BrandXP</b><span>Dubai</span></div>
-      <div class="client"><b>Kype the Band</b><span>London</span></div>
-      <div class="client"><b>Gutterati Production</b><span>Mumbai</span></div>
-      <div class="client"><b>BRND Studio</b></div>
-      <div class="client"><b>Saathealth</b></div>
-      <div class="client"><b>Ticktalkto</b></div>
-      <div class="client"><b>Prephub</b></div>
-      <div class="client"><b>Carver &amp; Associates</b></div>
+    <div class="marquee reveal" id="marquee">
+      <div class="track">
+        <ul class="client-list">
+          <li class="client"><div class="logo fit"><img src="assets/clients/ethara.png" alt="Ethara logo"></div><span>Ethara</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/unicef.jpg" alt="UNICEF logo"></div><span>UNICEF</span></li>
+          <li class="client"><div class="logo fit"><img src="assets/clients/reliance.png" alt="Reliance logo"></div><span>Reliance</span></li>
+          <li class="client"><div class="logo dark icon"><img src="assets/clients/carver.png" alt="Carver &amp; Associates logo"></div><span>Carver &amp; Associates</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/nfdc.jpg" alt="NFDC logo"></div><span>NFDC</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/brandxp.jpg" alt="BrandXP logo"></div><span>BrandXP</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/kype.jpg" alt="Kype the Band logo"></div><span>Kype the Band</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/brnd.jpg" alt="BRND Studio logo"></div><span>BRND Studio</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/saathealth.jpg" alt="Saathealth logo"></div><span>Saathealth</span></li>
+          <li class="client"><div class="logo fit"><img src="assets/clients/ticktalkto.svg" alt="Ticktalkto logo"></div><span>Ticktalkto</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/prephub.jpg" alt="Prephub logo"></div><span>Prephub</span></li>
+          <li class="client"><div class="logo mono">G</div><span>Gutterati Production</span></li>
+        </ul>
+        <ul class="client-list" aria-hidden="true">
+          <li class="client"><div class="logo fit"><img src="assets/clients/ethara.png" alt=""></div><span>Ethara</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/unicef.jpg" alt=""></div><span>UNICEF</span></li>
+          <li class="client"><div class="logo fit"><img src="assets/clients/reliance.png" alt=""></div><span>Reliance</span></li>
+          <li class="client"><div class="logo dark icon"><img src="assets/clients/carver.png" alt=""></div><span>Carver &amp; Associates</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/nfdc.jpg" alt=""></div><span>NFDC</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/brandxp.jpg" alt=""></div><span>BrandXP</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/kype.jpg" alt=""></div><span>Kype the Band</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/brnd.jpg" alt=""></div><span>BRND Studio</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/saathealth.jpg" alt=""></div><span>Saathealth</span></li>
+          <li class="client"><div class="logo fit"><img src="assets/clients/ticktalkto.svg" alt=""></div><span>Ticktalkto</span></li>
+          <li class="client"><div class="logo"><img src="assets/clients/prephub.jpg" alt=""></div><span>Prephub</span></li>
+          <li class="client"><div class="logo mono">G</div><span>Gutterati Production</span></li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -336,6 +364,8 @@
   addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 40), {passive:true});
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  const mq = document.getElementById('marquee');
+  new IntersectionObserver(es => es.forEach(e => mq.classList.toggle('run', e.isIntersecting))).observe(mq);
 </script>
 </body>
 </html>
