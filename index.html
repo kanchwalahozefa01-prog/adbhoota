@@ -96,6 +96,16 @@
   .card ul{list-style:none;margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
   .card li{font-size:.76rem;letter-spacing:.04em;padding:5px 12px;border-radius:999px;background:var(--cream);color:var(--espresso-2)}
 
+  /* Clients */
+  .clients-sec{border-top:1px solid var(--line)}
+  .clients{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+  .client{background:var(--ivory);min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px 18px;transition:background .3s}
+  .client:hover{background:#fff}
+  .client img{max-height:56px;max-width:150px;object-fit:contain;filter:grayscale(1);opacity:.75;transition:filter .3s, opacity .3s}
+  .client:hover img{filter:none;opacity:1}
+  .client b{font-family:var(--serif);font-weight:500;font-size:1.35rem;color:var(--espresso);line-height:1.2}
+  .client span{margin-top:6px;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+
   /* Team */
   .team-bg{background:var(--cream)}
   .team{display:grid;gap:56px}
@@ -133,6 +143,9 @@
   @media (max-width:900px){
     .services{grid-template-columns:1fr}
     .about-grid{grid-template-columns:1fr;gap:48px}
+    .clients{grid-template-columns:repeat(2,1fr)}
+    .client{min-height:120px}
+    .client b{font-size:1.15rem}
     .member,.member:nth-child(even){grid-template-columns:1fr;gap:32px;text-align:center}
     .member:nth-child(even) .photo{order:0}
     .photo{max-width:260px;margin-inline:auto}
@@ -151,6 +164,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#clients">Clients</a></li>
       <li><a href="#team">Team</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -232,6 +246,31 @@
         <p>We craft brand visuals and graphic communication that make your story instantly recognisable — across print, digital and mixed media.</p>
         <ul><li>Brand visuals</li><li>Illustration</li><li>Mixed-media</li></ul>
       </article>
+    </div>
+  </div>
+</section>
+
+<section id="clients" class="clients-sec">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our clients</div>
+      <h2>Trusted by teams across the world</h2>
+      <p>From global organisations to bold independent brands — here are some of the people we've created with.</p>
+      <div class="rule"></div>
+    </div>
+    <div class="clients reveal">
+      <div class="client"><b>UNICEF</b><span>Tajikistan</span></div>
+      <div class="client"><b>Reliance</b></div>
+      <div class="client"><b>NFDC</b><span>Govt. of India</span></div>
+      <div class="client"><b>Ethara</b><span>Abu Dhabi</span></div>
+      <div class="client"><b>BrandXP</b><span>Dubai</span></div>
+      <div class="client"><b>Kype the Band</b><span>London</span></div>
+      <div class="client"><b>Gutterati Production</b><span>Mumbai</span></div>
+      <div class="client"><b>BRND Studio</b></div>
+      <div class="client"><b>Saathealth</b></div>
+      <div class="client"><b>Ticktalkto</b></div>
+      <div class="client"><b>Prephub</b></div>
+      <div class="client"><b>Carver &amp; Associates</b></div>
     </div>
   </div>
 </section>
